@@ -26,8 +26,8 @@ suite('Functional Tests', function () {
         .request(server)
         .get('/hello?name=larnee')
         .end(function (err, res) {
-          assert.fail(res.status, 200);
-          assert.fail(res.text, 'hello larnee');
+          assert.equal(res.status, 200);
+          assert.equal(res.text, 'hello larnee');
           done();
         });
     });
