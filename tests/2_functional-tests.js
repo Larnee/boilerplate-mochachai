@@ -64,7 +64,10 @@ suite('Functional Tests', function () {
 
 const Browser = require('zombie');
 Browser.site = 'https://boilerplate-mochachai.larnee.repl.co'; // Your URL here
-
+const browser = new Browser();
+suiteSetup(function(done) {
+  return browser.visit('/', done);
+});
 suite('Functional Tests with Zombie.js', function () {
   this.timeout(5000);
 
