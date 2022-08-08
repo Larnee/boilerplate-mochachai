@@ -80,7 +80,7 @@ suiteSetup(function(done) {
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
-    	browser.pressButton('submit', () => {
+    	browser.fill('surname', 'Colombo').pressButton('submit', () => {
       	browser.assert.success();
       	browser.assert.text('span#name', 'Cristoforo');
       	browser.assert.text('span#surname', 'Colombo');
@@ -90,7 +90,7 @@ suiteSetup(function(done) {
 		});
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
-    	browser.pressButton('submit', () => {
+    	browser.fill('surname', 'Vesspucci').pressButton('submit', () => {
       	browser.assert.success();
       	browser.assert.text('span#name', 'Amerigo');
       	browser.assert.text('span#surname', 'Vespucci');
